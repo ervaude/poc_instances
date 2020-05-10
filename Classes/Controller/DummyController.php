@@ -15,12 +15,12 @@ class DummyController
 
     public function indexAction(): ResponseInterface
     {
-        $repo = GeneralUtility::makeInstance(
+        $service = GeneralUtility::makeInstance(
             DummyService::class,
             'foo',
             ['bar', 'baz']
         );
-        DebuggerUtility::var_dump($repo->dummyMethod());
+        DebuggerUtility::var_dump($service->dummyMethod());
         return new HtmlResponse('');
     }
 }
